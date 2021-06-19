@@ -31,7 +31,8 @@ class CalendarAdapter : RecyclerView.Adapter<CalendarAdapter.CalendarViewHolder>
 
     class CalendarViewHolder(private val binding: ItemDateBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(calendarData: CalendarData, position : Int) {
-            binding.tvDay.text = (position + 1).toString()
+            if(calendarData.name != "bye")
+                binding.tvDay.text = calendarData.name
         }
     }
 

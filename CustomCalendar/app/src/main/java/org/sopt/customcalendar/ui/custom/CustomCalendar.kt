@@ -51,7 +51,7 @@ class CustomCalendar(
                 setCalendar()
             }
             ibPrevMonth.setOnClickListener {
-                nowCalendar.add ( Calendar.MONTH, -1 )
+                nowCalendar.add ( Calendar.MONTH, -1)
                 tvMonth.text = convertCalendarToString(nowCalendar)
                 setCalendar()
             }
@@ -59,9 +59,15 @@ class CustomCalendar(
     }
 
     private fun setCalendar() {
+        val startCalendar = nowCalendar
         dateList.clear()
+
+        startCalendar.set(Calendar.DAY_OF_MONTH, 1)
+
+        for(i in 2..startCalendar.get(Calendar.DAY_OF_WEEK))
+            dateList.add(CalendarData(null, "bye"))
         for(i in 1..nowCalendar.getActualMaximum(Calendar.DAY_OF_MONTH))
-            dateList.add(CalendarData(null, "hi"))
+            dateList.add(CalendarData(null, "$i"))
 
         calendarAdapter.data = dateList
     }
