@@ -1,6 +1,7 @@
 package org.sopt.customcalendar.ui.custom.adapter
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import org.sopt.customcalendar.data.entity.CalendarData
@@ -31,8 +32,10 @@ class CalendarAdapter : RecyclerView.Adapter<CalendarAdapter.CalendarViewHolder>
 
     class CalendarViewHolder(private val binding: ItemDateBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(calendarData: CalendarData, position : Int) {
-            if(calendarData.name != "bye")
-                binding.tvDay.text = calendarData.name
+            if(calendarData.name == "bye")
+                binding.clDate.visibility = View.INVISIBLE
+
+            binding.tvDay.text = calendarData.name
         }
     }
 
