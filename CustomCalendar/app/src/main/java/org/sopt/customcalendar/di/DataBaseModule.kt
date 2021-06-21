@@ -25,5 +25,5 @@ object DataBaseModule {
             .build()
 
     @Provides
-    fun provideProfileDao(database: LocalDatabase): CalendarDao = database.calendarDao
+    fun provideCalendarDao(database: LocalDatabase): CalendarDao = database.calendarDao
 }
