@@ -35,6 +35,7 @@ class CalendarAdapter : RecyclerView.Adapter<CalendarAdapter.CalendarViewHolder>
             if(calendarData.name == "bye")
                 binding.clDate.visibility = View.INVISIBLE
 
+            binding.rvTodo.adapter = TodoAdapter()
             binding.tvDay.text = calendarData.name
         }
     }
