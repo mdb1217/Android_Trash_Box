@@ -17,5 +17,5 @@ data class CalendarData(
     val date: Calendar,
 
     @ColumnInfo(name = "todo")
-    val todo: List<String> ?= null
+    val todo: String
 )
